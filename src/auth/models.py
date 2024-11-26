@@ -6,7 +6,6 @@ from sqlalchemy.orm import mapped_column, Mapped
 
 from src.database import Base
 
-
 metadata = MetaData()
 
 role = Table(
@@ -17,6 +16,7 @@ role = Table(
     Column("permissions", JSON),
 )
 
+# Императивный подход - класс не создаем (переменная).
 user = Table(
     "user",
     metadata,
@@ -32,6 +32,8 @@ user = Table(
 )
 
 
+# Декларативный подход (описывается User)
+# Этот подход использует библиотека fastapi_users, поэтому тут применили.
 class User(SQLAlchemyBaseUserTable[int], Base):
     id = Column("id", Integer, primary_key=True)
     email = Column("email", String, nullable=False)

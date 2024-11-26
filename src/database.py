@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from config import DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_HOST
+from .config import DB_USER, DB_PASS, DB_NAME, DB_PORT, DB_HOST
 
 # from models.models import role
 
